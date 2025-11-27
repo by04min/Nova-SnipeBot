@@ -3,7 +3,7 @@ from discord import app_commands
 from bot_config import DISCORD_TOKEN, GUILD_IDS 
 
 # import bot commands
-from commands.ping import ping
+from commands.ping import ping, christine
 
 
 intents = discord.Intents.default()
@@ -12,6 +12,7 @@ tree = app_commands.CommandTree(client)
 
 
 tree.add_command(ping, guilds=[discord.Object(id=gid) for gid in GUILD_IDS])
+tree.add_command(christine, guilds=[discord.Object(id=gid) for gid in GUILD_IDS])
 
 @client.event
 async def on_ready():
